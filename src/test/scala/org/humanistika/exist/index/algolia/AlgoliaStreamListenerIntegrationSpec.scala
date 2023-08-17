@@ -497,12 +497,12 @@ class AlgoliaStreamListenerIntegrationSpec extends Specification with ExistServe
   private def mockIndexModuleConfig() : Element = {
     import org.easymock.EasyMock._
     val element = mock(classOf[org.w3c.dom.Element])
-
+    
     expect(element.getAttribute("application-id")).andReturn("some-application-id")
     expect(element.getAttribute("admin-api-key")).andReturn("some-admin-api-key")
     expect(element.hasAttribute("id")).andReturn(true)
     expect(element.getAttribute("id")).andReturn("algolia-index")
-
+    
     replay(element)
 
     element
