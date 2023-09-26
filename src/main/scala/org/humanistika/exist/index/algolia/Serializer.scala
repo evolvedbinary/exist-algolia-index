@@ -205,7 +205,7 @@ object Serializer {
 
   def serialize(node: Node, properties: Properties): Seq[Throwable] \/ String = {
 
-    val serializationIO = Resource.make(IO {serializerPool.borrowObject(classOf[SAXSerializer]).asInstanceOf[SAXSerializer]})(serializer => IO {serializerPool.returnObject()}).use { serializer =>
+    val serializationIO = Resource.make(IO {serializerPool.borrowObject(classOf[SAXSerializer]).asInstanceOf[SAXSerializer]})(serializer => IO {serializerPool.returnObject(serializer)}).use { serializer =>
       Resource.fromAutoCloseable(IO {new StringWriter()}).use { writer =>
         IO {
             serializer.setOutput(writer, properties)

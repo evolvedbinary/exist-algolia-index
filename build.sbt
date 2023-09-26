@@ -24,10 +24,10 @@ libraryDependencies ++= {
 
   val scalazV = "7.2.26"
   val catsV = "1.0.0"
-  val existV = "4.4.0"
+  val existV = "6.3.0-SNAPSHOT"
   val algoliaV = "2.19.0"
   val akkaV = "2.5.16"
-  val jacksonV = "2.9.7"
+  val jacksonV = "2.13.4"
 
   Seq(
     "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.1",
@@ -40,9 +40,9 @@ libraryDependencies ++= {
 
     "org.exist-db" % "exist-core" % existV % Provided
       exclude("org.exist-db.thirdparty.javax.xml.xquery", "xqjapi"),
-    "net.sf.saxon" % "Saxon-HE" % "9.6.0-7" % Provided,
+    "net.sf.saxon" % "Saxon-HE" % "9.9.1-8" % Provided,
     "com.fasterxml.jackson.core" % "jackson-core" % jacksonV % Provided,
-    "commons-codec" %	"commons-codec"	% "1.11" % Provided,
+    "commons-codec" %	"commons-codec"	% "1.15" % Provided,
 
     "com.fasterxml.jackson.core" % "jackson-databind" % jacksonV
       exclude("com.fasterxml.jackson.core", "jackson-core"),
@@ -61,7 +61,7 @@ libraryDependencies ++= {
     "org.easymock" % "easymock" % "3.6" % Test,
 
     "org.exist-db" % "exist-start" % existV % Test,
-    "org.apache.httpcomponents" % "httpclient" % "4.5.6" % Test
+    "org.apache.httpcomponents" % "httpclient" % "4.5.14" % Test
   )
 }
 
